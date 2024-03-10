@@ -1,0 +1,106 @@
+{% extends 'Navbar.html' %}
+{% load static %}
+<html>
+<head>
+    <title>SIGNUP</title>
+    <style>
+        body {
+            background-color: #659DBD; /* Change the background color */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .bodycontainer {
+            background-color: #DAAD86;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px; /* Adjust container width as needed */
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: calc(100% - 22px); /* Adjust input width */
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: calc(100% - 22px); /* Adjust button width */
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #E8A87C; /* Change the button color */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #D18C63; /* Change the button color on hover */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-size: 16px;
+            text-align: left;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    {% block body %}
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.tags %}
+                <script>alert("{{ message }}")</script>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    <div class="container">
+        <div class="bodycontainer">
+            <h1>Login</h1>
+            <form method="post" action="{% url 'signup1'%}">
+                {% csrf_token %}
+                <label for="username">Username</label><br>
+                <input type="text" id="username" name="username" placeholder="Enter Student ID / EMP ID"><br>
+                <label for="password">Password</label><br>
+                <input type="password" id="password" name="password"><br><br>
+                <label for="password1">Confirm Password</label><br>
+                <input type="password" id="password1" name="password1"><br><br>
+                <button type="submit" name="SUBMIT">SUBMIT</button>
+            </form>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>

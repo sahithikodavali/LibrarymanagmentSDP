@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Encyclopedia Books</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Assuming you have a separate CSS file for styling -->
+    <!-- You can include additional stylesheets or JavaScript files here -->
+    <style>
+        body {
+            background-color: #DEDAF4; /* Change this to your desired background color */
+        }
+
+        .book {
+            display: inline-block;
+            width: 300px; /* Adjust the width as needed */
+            margin: 20px; /* Adjust the margin as needed */
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .book img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .book h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .book p {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .rating {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .rating span {
+            font-size: 20px;
+            color: gold;
+            cursor: pointer;
+        }
+
+        .rating span:hover,
+        .rating span:hover ~ span {
+            color: grey;
+        }
+        /* Add more styling as needed */
+    </style>
+</head>
+<body>
+    <h1>Encyclopedia Books</h1>
+
+    <div class="book">
+        <img src="https://m.media-amazon.com/images/I/51P9pkUUxiL._SY445_SX342_.jpg" width="200", height="500" alt="Book Cover">
+        <h2>Encyclopaedia Britannica</h2>
+        <p>
+          The history of the world comes to life in a brand-new way in a groundbreaking visual reference from two trusted leaders in the information industry.
+          This stunning guide is a fact-filled and visual journey like no other through the last 150+ years of world history.Its easy-to-follow format pairs informative and engaging text with thousands of revealing historical photos.
+        </p>
+        <div class="rating">
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+        </div>
+    </div>
+    <div class="book">
+        <img src="data:image/jpeg;base64,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" width="200", height="200" alt="Book Cover">
+        <h2>Knowledge Encyclopedia: Inventions and Discoveries</h2>
+        <p>
+           When did our ancestors start using tools? How did ancient cultures deal with illnesses? How were new lands discovered? How did scientists learn about the universe and its cosmic secrets? How did people travel before engines were invented?
+          This encyclopedia on inventions and discoveries will answer these and many more hows and whens for you. Learning is made simpler with well-labelled diagrams and an extensive glossary of difficult words This encyclopedia is a must-read for all children!
+        </p>
+        <div class="rating">
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+        </div>
+    </div>
+    <div class="book">
+        <img src="https://books.google.co.in/books/content?id=WezDngEACAAJ&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE70Pc0sCVOc2s0VAKFGGkyRmpO7Az4c_HbM98zSx-ipupR270BuY5_JheRoohyYBCD64CLJL2qhVUxiKBLJKj5R0Nk0hVGQhEl6ANjN5SNTg5Crmu2d3Yi01dxCUnIckIFsJulic" width="200", height="200" alt="Book Cover">
+        <h2>Why? Encyclopedia: Brilliant Answers to Baffling Questions</h2>
+        <p>
+           This exciting visual encyclopedia is perfect for your curious children who want their questions answered. With an easy, interactive question-and-answer format, brilliant images and illustrations, your kid's favourite subjects will come to life!
+          A world of knowledge is packed into a one-stop-shop reference book for your child.
+        </p>
+        <div class="rating">
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+        </div>
+    </div>
+    <div class="book">
+        <img src="https://books.google.co.in/books/publisher/content?id=ua44DQAAQBAJ&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE70VB8oOo_aFrBaIKkulgzBRQf9kTnhrZJIdcWE9z-3JR-fDkEN6g7h15Cwm00VmIooEEcNazpEczEOM4s-KW2nVbnACkoYarr6K8HxQB1UvrwXT644ScGtIY4_02rbJ-fZJFLiN" width="200", height="200" alt="Book Cover">
+        <h2>Science Encyclopedia: Atom Smashing</h2>
+        <p>
+           Food chemistry, atom crashing, wave power, food chemistry, and robots! These are just a few of the topics covered in this fantastic new science encyclopedia, which presents a comprehensive overview of physical and life sciences from A to Z. Super smart and kid-friendly, it's packed with full-color photographs, weird but true facts,
+          amazing statistics, do-it-yourself experiments,
+        </p>
+        <div class="rating">
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+        </div>
+    </div>
+    <div class="book">
+        <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQQpxbZh8HrG8se6kkw1uobvrSFxCmY4TmC0vFs-RUHEOxEWC6o" width="200", height="200" alt="Book Cover">
+        <h2>Space A Children's Encyclopedia</h2>
+        <p>
+            Packed with never-seen-before images from the International Space Archive and out-of-this-world pictures from NASA missions, they ll explore our universe as never before. Exclusive interviews, eyewitness accounts, incredible facts and more will teach them everything they need to know.
+          It s an incredible look at the universe in which we live perfect for space enthusiasts and budding astronomers.
+        </p>
+        <div class="rating">
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+        </div>
+    </div>
+    <div class="book">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQV-3Mw6OMVjwRCyCnJ3UuMgasMduNTEECzIO2MYv43TZI1Gc-6" width="200", height="200" alt="Book Cover">
+        <h2>The Science of Everything: How Things Work in Our World</h2>
+        <p>
+            National Geographic answers all the questions about technology, biology, chemistry, physics, math, engineering, computers, and mechanics--in an indispensable book that reveals the science behind virtually everything.
+            The Science of Everything takes readers on a fascinating tour, using plain talk, colorful photography, instructive diagrams, and everyday examples to explain the science behind all the things we take for granted in our modern world.
+        </p>
+        <div class="rating">
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+        </div>
+    </div>
+    <div class="book">
+        <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTqWN7_Whpcmd7UcYcxXrjmMQ2y0_hQN01mgDgFMchnhFJzKpRw" width="200", height="200" alt="Book Cover">
+        <h2>Wow!:The Visual Encyclopedia of Everything</h2>
+        <p>
+           With its unique visual approach, WOW! shows you a range of topics but presents them with a twist.
+          Mingle with a bunch of snakes... on a ladder! Meet your mammal relatives in a photo album, or peek into a drawer full of prosthetic eyes to discover the science of genetics. An ice sculpture reveals the science behind states of matter, architectural marvels are displayed on a house of cards, and the story of space exploration is told through an astronaut's stamp collection.
+        </p>
+        <div class="rating">
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+        </div>
+    </div>
+
+    <!-- Add more programming books as needed -->
+
+    <!-- Back button to return to the main page -->
+    <a href="{% url 'mainpage' %}">Back to Main Page</a>
+<script>
+        const ratings = document.querySelectorAll('.rating');
+
+        ratings.forEach(rating => {
+            const stars = rating.querySelectorAll('span');
+
+            stars.forEach((star, index) => {
+                star.addEventListener('click', () => {
+                    setRating(stars, index);
+                });
+            });
+        });
+
+        function setRating(stars, index) {
+            stars.forEach((star, i) => {
+                if (i <= index) {
+                    star.innerHTML = '&#9733;'; // Filled star
+                } else {
+                    star.innerHTML = '&#9734;'; // Empty star
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+
+</body>
+</html>

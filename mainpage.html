@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online books</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <style>
+       h1{padding-top:20px;
+       color:white;
+  text-align: center;
+  font-size: 50px;
+  font-family: "Sofia", sans-serif;
+  border:solid black;
+}
+h2{
+  color:white;
+  text-align: center;
+  font-size:30px;
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+h3{
+ color:white;
+  text-align:center;
+  font-size:20px;
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+#leftmost{
+   color:white;
+  text-align: center;
+  font-size:30pt;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  width:60%;
+  margin: auto;
+  height:55px;
+
+ }
+body {
+    background-image: url("https://turkyaybir.org.tr/wp-content/uploads/2015/10/376152628_249e3630c0_o.jpg");
+    background-size: cover;
+    /* border-style: solid;
+    border-color:black; */
+}
+.butn{
+  border: 2px solid #4CAF50;
+  transition-duration: 0.4s;
+  padding: 12px 40px;
+  border-radius: 12px;
+  display: block;
+  width: 20%;
+  font-size:20pt;
+}
+.butn:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+.carousel{
+  /*padding: 50px 60px;
+  border-radius:30px;*/
+  width:70%;
+  margin: 0px auto;
+}
+.wrapper{
+  width:100%;
+  padding-bottom:10%;
+  text-align:center;
+}
+.slick-slide{
+  margin:10px;
+}
+.slick-slide img{
+  width:100%;
+  border: 2px solid #fff;
+}
+.wrapper .slick-dots li button:before {
+  font-size:20px;
+  color:white;
+}
+#bottom{
+  color:white;
+  font-size:20px;
+  text-align: center;
+  column-gap: 80px;
+}
+#imgdiv{
+  width:100%;
+  height:555px;
+}
+#imgdiv2{
+  width:90%;
+  height:500px;
+  background-color:#003366;/*#00CC99;*/
+  margin:auto;
+  /*padding-left: 80px; #4CAF50;*/
+}
+#imgdiv3{
+  width:50%;
+  float:left;
+  height:500px;
+  background-color:	#003366;
+}
+#imgdiv4{
+  float:right;
+  width:50%;
+  height:500px;
+}
+#imgdiv5{
+  margin: auto;
+  width: 50%;
+  padding: 40px;
+}
+h4{
+  font-size:60px;
+  color:black;
+}
+#bottombef{
+  width:100%;
+  height:300px;
+  background-color:#006666;
+}
+p{
+  font-size:20px;
+  color:#C8C8C8;
+}
+.main{
+  max-width: 1200px;
+  margin: 0 auto;
+  height:1200px;
+}
+.card_image{
+  height:auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+.btn {
+  color: #ffffff;
+  padding: 0.8rem;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  font-weight: 400;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+}
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.cards_item {
+  display: flex;
+  padding: 1rem;
+}
+
+@media (min-width: 40rem) {
+  .cards_item {
+    width: 50%;
+  }
+}
+
+@media (min-width: 56rem) {
+  .cards_item {
+    width: 33.3333%;
+  }
+}
+.card {
+  background-color: #ffd9d9;
+  border-radius: 0.25rem;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.card_content {
+  padding: 1rem;
+  background: linear-gradient(to bottom left, #EF8D9C 40%, #FFC39E 100%);
+}
+.card_title {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  margin: 0px;
+}
+.card_text {
+  color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  font-weight: 40;
+}
+#search{
+    background-color: white;
+    font-size: 17px;
+    width: 205px;
+    border: 2px solid white;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  #search:hover{
+    background-color: rgb(228, 228, 228);
+  }
+  .icon{
+    color: gray;
+    position:relative;
+    left:200px;
+    top:-2px;
+    /* z-index:999; */
+  }
+ .nav-searchbar{
+    text-align: right;
+    width: 70%;
+  }
+  .books-container {
+    display: flex; /* Use flexbox */
+    justify-content: space-between; /* Distribute items evenly along the main axis */
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+}
+
+.book-item {
+    flex: 0 0 48%; /* Each item takes up 48% of the container width */
+    margin-bottom: 20px; /* Add some space between items */
+}
+.Profile {
+    background-color: #D291BC; /* Change the background color */
+    color: white; /* Change the text color */
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.Profile:hover {
+    background-color: #D291BC;
+}
+
+    </style>
+</head>
+<body>
+       <!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Your existing head content here -->
+    <style>
+        .profile-link {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: white;
+            color: black;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            text-decoration: none; /* To remove the underline */
+        }
+    </style>
+</head>
+<body>
+    <!-- Your existing body content here -->
+    <a href="{% url 'profile' %}" class="profile-link">
+        <td>
+            <font color="#D291BC">Profile.</font>
+        </td>
+    </a>
+    <!-- Your existing HTML content here -->
+    <!-- Include jQuery and Slick.js scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.carousel').slick({
+                slidesToShow: 3,
+                dots:true,
+                centerMode: true,
+            });
+        });
+    </script>
+</body>
+
+
+
+    <!-- Button with elevated style -->
+
+
+     <style>
+        .logout-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: white;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Your existing body content here -->
+   <h1>Welcome {% if username %}{{ username }}{% else %}Guest{% endif %}</h1>
+    <!-- Add the logout button -->
+    <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="logout-button">Logout</button>
+    </form>
+    <!-- Your existing HTML content here -->
+    <!-- Include jQuery and Slick.js scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.carousel').slick({
+                slidesToShow: 3,
+                dots:true,
+                centerMode: true,
+            });
+        });
+    </script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+<h1> Online Library </h1>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="#">About Us</a>
+    </li>
+
+  </ul>
+  <div class="nav-searchbar">
+            <i class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg>
+            </i>
+            <input type="search" name="search" id="search" placeholder="Search Books">
+        </div>
+</nav>
+<h2>Need A Book? We Got Your Shelf!</h2>
+  <div id="imgdiv">
+    <div id="imgdiv2">
+      <div id="imgdiv3">
+        <img  class="img2" src="https://previews.123rf.com/images/dolgachov/dolgachov1904/dolgachov190400052/119868258-high-school-student-girl-reading-book-at-library.jpg" alt="Book" width="685" height="500">
+      </div>
+       <div id="imgdiv4">
+         <div id="imgdiv5">
+           <h4> Innovative Learning</h4>
+           <p> Wondering for books? We at Library Genesis are with you. Explore amazing collection of our books to learn and grow. Register yourself today and gain access to our collection made just for you.</p>
+         </div>
+    </div>
+    </div>
+
+
+</div>
+<div class="wrapper">
+<div id="leftmost">Popular Books Among Readers</div>
+  <div class="carousel">
+  <div>
+<img  class="img1" style="clear:left;" src="https://m.media-amazon.com/images/I/71e+i895I9L._SL1360_.jpg" alt="Book" width="200" height="300"></div>
+
+<div><img  class="img1" src="https://m.media-amazon.com/images/I/61mg58upHeL._SL1429_.jpg" alt="Book" width="200" height="300"></div>
+
+<div><img  class="img1" src="https://m.media-amazon.com/images/I/61jXSsH1M8L._SL1430_.jpg" alt="Book" width="200" height="300"></div>
+
+<div><img  class="img1" src="https://m.media-amazon.com/images/I/81y2QWMCZRL._SL1500_.jpg" alt="Book" width="200" height="300"></div>
+
+<div><img class="img1" src="https://m.media-amazon.com/images/I/51hrxjXQMgS._SX342_SY445_.jpg" alt="Book" width="200" height="300"></div>
+<div><img class="img1" src="https://m.media-amazon.com/images/I/71zIDc0j0OL._AC_UL640_FMwebp_QL65_.jpg" alt="Book" width="200" height="300"></div>
+<div><img class="img1" src="https://m.media-amazon.com/images/I/61lKtgeBwjL._AC_UL640_FMwebp_QL65_.jpg" alt="Book" width="200" height="300"></div>
+</div>
+</div>
+<div class="main">
+  <h2>Events</h2>
+  <ul class="cards">
+    <li class="cards_item">
+      <div class="card">
+        <div class="card_image"><img src="https://m.media-amazon.com/images/I/81FSZRKVFwL._AC_UL640_FMwebp_QL65_.jpg" alt="Book" width="400" height="300"></div>
+        <div class="card_content">
+          <h2 class="card_title">PROGRAMMING BOOKS</h2>
+          <p class="card_text">the best new programming of 2023, from gripping sequels to incredible debuts from fresh new voices. We also look back at the best programming books of 2023.</p>
+            <button class="btn card_btn" onclick="window.location.href = '{% url 'programming_books' %}'">Explore</button>
+
+        </div>
+      </div>
+    </li>
+     <li class="cards_item">
+      <div class="card">
+        <div class="card_image"><img src="https://m.media-amazon.com/images/I/6171C0fKEbL._AC_UL640_FMwebp_QL65_.jpg" alt="Book" width="400" height="300"></div>
+        <div class="card_content">
+          <h2 class="card_title">KNOWLEDGE BOOKS</h2>
+          <p class="card_text">From eye-opening knowledge to logical exposés, broaden your horizons with our edit of the best knowledge books of all time also best books of 2023 .</p>
+           <button class="btn card_btn" onclick="window.location.href = '{% url 'knowledge_books' %}'">Explore</button>
+        </div>
+      </div>
+    </li>
+    <li class="cards_item">
+      <div class="card">
+        <div class="card_image"><img src="https://www.finsmes.com/wp-content/uploads/2018/04/pen.jpg" width="400" height="400"></div>
+        <div class="card_content">
+          <h2 class="card_title">Finance Books</h2>
+          <p class="card_text">Personal finance books help you manage your money better. We researched the best options for you, from books on debt management to budgeting.</p>
+           <button class="btn card_btn" onclick="window.location.href = '{% url 'finance_books' %}'">Explore</button>
+        </div>
+      </div>
+    </li>
+    <li class="cards_item">
+      <div class="card">
+        <div class="card_image"><img src="https://m.media-amazon.com/images/I/91T3vmUxxwL._SY522_.jpg" alt="Book" width="400" height="400"></div>
+        <div class="card_content">
+          <h2 class="card_title">Encyclopedia Books</h2>
+          <p class="card_text">The books we read encyclopedia are often become our favorites for better knowledge . Find the best book here for you and these are the best of 2023 .</p>
+          <button class="btn card_btn" onclick="window.location.href = '{% url 'encyclopedia_books' %}'">Explore</button>
+        </div>
+      </div>
+    </li>
+
+  </ul>
+</div>
+
+
+<div id="bottom">       </div>
+
+
+    <h2>Recommended Books</h2>
+    <div class="books-container">
+        <div class="book-item">
+            <img src="https://m.media-amazon.com/images/I/71e+i895I9L._AC_UY436_FMwebp_QL65_.jpg " width="200" height="300" alt="Book">
+        </div>
+        <div class="book-item">
+            <img src="https://m.media-amazon.com/images/I/6171C0fKEbL._AC_UL640_FMwebp_QL65_.jpg"  width="200" height="300" >
+        </div>
+         <div class="book-item">
+             <img class="img1" src="https://m.media-amazon.com/images/I/51hrxjXQMgS._SX342_SY445_.jpg" alt="Book" width="200" height="300">
+         </div>
+        <div class="book-item">
+            <img class="img1" src="https://m.media-amazon.com/images/I/61lKtgeBwjL._AC_UL640_FMwebp_QL65_.jpg" alt="Book" width="200" height="300">
+        </div>
+        <!-- Add more book items here -->
+    </div>
+<div id="Admin">
+  <div class="container">
+  <h2>Explore More</h2>
+  <div id="accordion">
+    <div class="card">
+      <div class="card-header">
+        <a class="card-link" data-toggle="collapse" href="#collapseOne">
+          Special Programs
+        </a>
+      </div>
+      <div id="collapseOne" class="collapse show" data-parent="#accordion">
+        <div class="card-body">
+          Admin can be your guide to evolve more with events like essay writing, poetry writing, debate competitions and many more. We conduct Fiction factory flash fiction for all your unpublished stories.
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+        Research and Development
+      </a>
+      </div>
+      <div id="collapseTwo" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          We welcome you to take advanatge of all our world-class available resources to provide you competitive advantage at the business, industry, or national level.
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+          Our Team
+        </a>
+      </div>
+      <div id="collapseThree" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          Admin is maintained and co-ordinated by constant hardwork and dediaction of our team members, moderators and founders.If you are looking for self role in our team mail us with your description.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+    <!-- Your existing HTML content here -->
+
+    <!-- Include jQuery and Slick.js scripts -->
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.carousel').slick({
+                slidesToShow: 3,
+                dots:true,
+                centerMode: true,
+            });
+        });
+
+        // Function to handle search
+        function handleSearch() {
+            // Get the search query from the input field
+            var searchQuery = document.getElementById('search').value;
+
+            // Perform the search operation (replace this with your actual search logic)
+            alert('You searched for: ' + searchQuery);
+        }
+
+        // Attach the handleSearch function to the form submission or search button click event
+        document.getElementById('search').addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                handleSearch();
+            }
+        });
+    </script>
+</body>
+</html>
